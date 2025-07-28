@@ -1,0 +1,113 @@
+# Refinamento Interativo de Prompts
+
+## 1. Agendamento de Consulta
+
+**Prompt Original:**  
+Explique claramente como o paciente pode agendar uma consulta (telefone, WhatsApp e site).
+
+**Resposta Antiga:**  
+Você pode agendar sua consulta pelo telefone (11) 1234-5678, pelo WhatsApp (11) 91234-5678 ou pelo nosso site www.clinicaodonto.com/agendamento.
+**Prompt Refinado:**  
+Você é assistente de uma clínica odontológica. Explique de forma clara e objetiva para o paciente como ele pode agendar uma consulta, indicando os canais disponíveis: telefone, WhatsApp e site. Use exemplos de números e endereço do site para facilitar a compreensão, e escreva em formato de lista com até 3 itens.
+**Resposta Refinada:**  
+Para agendar sua consulta, você pode:  
+1. Ligar para (11) 1234-5678.  
+2. Enviar uma mensagem pelo WhatsApp no número (11) 91234-5678.  
+3. Acessar nosso site www.clinicaodonto.com/agendamento e reservar seu horário online.
+**Justificativa do Refinamento:**  
+Adicionar contexto e instruções específicas (formato de lista, exemplos claros) melhora a clareza e organização da resposta, facilitando a compreensão do paciente.
+**Melhoria Demonstrada:**  
+A resposta refinada é mais estruturada, fácil de ler e diretamente aplicável, enquanto a antiga era um texto único e menos organizado.
+
+---
+
+## 2. Remarcação de Consulta
+
+**Prompt Original:**  
+Explique como o paciente pode remarcar uma consulta e qual o prazo mínimo.
+**Resposta Antiga:**  
+Sim, a remarcação é possível desde que feita com pelo menos 24 horas de antecedência via telefone ou WhatsApp.
+**Prompt Refinado:**  
+Como assistente da clínica odontológica, explique passo a passo como o paciente pode remarcar uma consulta. Informe o prazo mínimo para remarcar (24 horas antes) e os canais válidos para essa solicitação (telefone e WhatsApp). Use frases curtas e claras, e inclua um exemplo prático de como proceder.
+**Resposta Refinada:**  
+Para remarcar sua consulta, siga estes passos:  
+1. Entre em contato conosco pelo telefone (11) 1234-5678 ou pelo WhatsApp (11) 91234-5678.
+2. Faça a solicitação com pelo menos 24 horas de antecedência do horário marcado.  
+3. Aguarde a confirmação da nova data e horário.  
+Exemplo: “Olá, gostaria de remarcar minha consulta agendada para amanhã, pode ser para quinta-feira?”  
+**Justificativa do Refinamento:**  
+Incluir um passo a passo e um exemplo prático ajuda a evitar ambiguidades e garante que o paciente saiba exatamente como agir.
+**Melhoria Demonstrada:**  
+A resposta refinada é detalhada e orienta o paciente de maneira clara, enquanto a antiga era genérica.
+
+---
+
+## 3. Clareamento Dental
+**Prompt Original:**  
+Explique se a clínica realiza clareamento e os tipos oferecidos.
+**Resposta Antiga:**  
+Sim, oferecemos clareamento dental a laser e caseiro, ambos realizados com acompanhamento profissional.
+**Prompt Refinado:**  
+Informe ao paciente, de forma profissional, se a clínica realiza clareamento dental. Explique os tipos de clareamento disponíveis, como clareamento a laser e caseiro, ressaltando que todos os procedimentos são acompanhados por profissionais. Liste os tipos em bullets e use linguagem acessível.
+**Resposta Refinada:**  
+Sim, realizamos clareamento dental com supervisão profissional. Os tipos disponíveis são: 
+- Clareamento a laser, feito na clínica para resultados rápidos.  
+- Clareamento caseiro, utilizando moldeiras personalizadas para uso domiciliar.  
+Todos os procedimentos são acompanhados por nossos especialistas para garantir segurança e eficácia.
+**Justificativa do Refinamento:**  
+Formatar em lista e enfatizar o acompanhamento profissional torna a informação mais clara e confiável.
+**Melhoria Demonstrada:**  
+A resposta refinada explica detalhadamente os métodos e tranquiliza o paciente, diferente da resposta simples e direta anterior.
+
+---
+
+## 4. Convênios Aceitos
+**Prompt Original:**  
+Informe quais convênios são aceitos e oriente a confirmar cobertura.
+**Resposta Antiga:**  
+Aceitamos os convênios Amil Dental, OdontoPrev, SulAmérica Odonto e Bradesco Dental. Consulte seu plano para confirmação de cobertura.
+**Prompt Refinado:**  
+Liste os convênios odontológicos aceitos pela clínica, como Amil Dental, OdontoPrev, SulAmérica e Bradesco Dental. Oriente o paciente a verificar a cobertura do seu plano específico antes de agendar, explicando que pode haver variações nos procedimentos cobertos.
+**Resposta Refinada:**  
+Atendemos os convênios:  
+- Amil Dental  
+- OdontoPrev  
+- SulAmérica Odonto  
+- Bradesco Dental  
+Recomendamos que você verifique diretamente com seu plano se o procedimento desejado está coberto, pois algumas variações podem ocorrer.
+**Justificativa do Refinamento:**  
+Dividir a informação em lista e detalhar a necessidade de confirmação traz mais transparência e evita mal-entendidos.
+**Melhoria Demonstrada:**  
+A resposta ficou mais completa e clara, facilitando a decisão do paciente.
+
+---
+
+## 5. Cuidados Pós-Extração
+**Prompt Original:**  
+Dê orientações claras sobre cuidados pós-extração.
+**Resposta Antiga:**  
+Evite alimentos quentes, esforço físico e fumar nas primeiras 24 horas após a extração. Mantenha a higiene conforme orientado pelo dentista.
+**Prompt Refinado:**  
+Explique para o paciente os cuidados essenciais após uma extração dentária. Informe o que deve ser evitado nas primeiras 24 horas, como fumar, alimentos quentes e esforço físico. Use linguagem simples e organize as orientações em tópicos para facilitar a leitura.
+**Resposta Refinada:**  
+Após a extração dentária, siga estas orientações para uma boa recuperação:  
+- Evite fumar nas primeiras 24 horas.  
+- Não consuma alimentos e bebidas quentes nesse período.  
+- Evite esforço físico intenso para não prejudicar a cicatrização.  
+- Mantenha a higiene oral conforme as instruções do dentista.  
+**Justificativa do Refinamento:**  
+Organizar a resposta em tópicos e usar linguagem simples facilita a compreensão e o seguimento das instruções pelo paciente.
+**Melhoria Demonstrada:**  
+A resposta refinada é mais didática e fácil de seguir, aumentando a probabilidade de cumprimento das orientações.
+
+---
+
+# Conclusão
+
+Os refinamentos focaram em:  
+- Contextualização do prompt para que o modelo entenda melhor o cenário.  
+- Instruções claras sobre formato (listas, passos).  
+- Exemplos práticos para melhor entendimento.  
+- Linguagem simples e objetiva.
+
+Como resultado, as respostas ficaram mais organizadas, detalhadas e úteis, demonstrando melhora significativa na comunicação com o paciente.
