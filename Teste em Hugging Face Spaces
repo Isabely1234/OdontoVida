@@ -1,0 +1,135 @@
+import pandas as pd
+
+# Lista dos 15 prompts reais
+prompts = [
+    "Explique claramente como o paciente pode agendar uma consulta (telefone, WhatsApp e site).",
+    "Informe os dias e horários de funcionamento da clínica, incluindo sábados.",
+    "Explique como o paciente pode remarcar uma consulta e qual o prazo mínimo.",
+    "Liste os principais tratamentos e serviços disponíveis na clínica.",
+    "Explique se a clínica realiza clareamento e os tipos oferecidos.",
+    "Diga se há atendimento odontopediátrico e como ele funciona.",
+    "Informe quais convênios são aceitos e oriente a confirmar cobertura.",
+    "Explique as opções de parcelamento disponíveis.",
+    "Liste todas as formas de pagamento aceitas pela clínica.",
+    "Dê orientações claras sobre cuidados pós-extração.",
+    "Informe o que evitar após clareamento dental.",
+    "Explique se é comum sentir dor e quando buscar ajuda.",
+    "Forneça endereço completo e meios de contato.",
+    "Descreva o que acontece na primeira consulta odontológica.",
+    "Informe sobre estrutura física e acessibilidade."
+]
+
+# Respostas (5 para cada prompt, total 75)
+respostas = [
+    # Prompt 1 (5 respostas)
+    "Você pode agendar por telefone (11) 1234-5678, WhatsApp (11) 91234-5678 ou site www.clinicaodonto.com/agendamento.",
+    "Ligue para (11) 1234-5678, envie mensagem para (11) 91234-5678 ou acesse www.clinicaodonto.com/agendamento.",
+    "Entre em contato via telefone, WhatsApp ou agende pelo site da clínica.",
+    "O agendamento pode ser feito pelo site www.clinicaodonto.com/agendamento, ou pelos telefones (11) 1234-5678 e (11) 91234-5678.",
+    "Atendemos agendamentos pelo nosso site, telefone fixo e WhatsApp comercial.",
+    # Prompt 2 (5 respostas)
+    "De segunda a sexta, das 08h às 18h, e aos sábados das 08h às 14h.",
+    "Funcionamos de segunda a sexta, das 08h às 18h. Sábado das 08h às 14h.",
+    "Horário: seg a sex das 08h às 18h; sábado das 08h às 14h.",
+    "A clínica abre de 08h às 18h durante a semana e das 08h às 14h aos sábados.",
+    "Estamos abertos de segunda a sábado. Consulte horários específicos no site.",
+    # Prompt 3 (5 respostas)
+    "Sim, pode remarcar com 24h de antecedência pelo telefone ou WhatsApp.",
+    "Basta entrar em contato até 1 dia antes pelo canal de atendimento.",
+    "Sim. Ligue com no mínimo 24 horas de antecedência.",
+    "Remarcações são aceitas até um dia antes pelo telefone (11) 1234-5678.",
+    "Sim, com pelo menos 24h de aviso, pelo WhatsApp ou telefone.",
+    # Prompt 4 (5 respostas)
+    "Limpeza, clareamento, canal, aparelhos, implantes, próteses e atendimento infantil.",
+    "Oferecemos tratamentos como ortodontia, clareamento, canal e implantes.",
+    "Serviços: limpeza, restauração, canal, ortodontia, implantes, próteses e mais.",
+    "A clínica realiza diversos serviços como limpeza, canal, clareamento e aparelhos.",
+    "Temos tratamentos odontológicos gerais e especializados.",
+    # Prompt 5 (5 respostas)
+    "Sim, oferecemos clareamento a laser e caseiro.",
+    "Fazemos clareamento dental com supervisão profissional.",
+    "Oferecemos clareamento a laser ou com moldeiras personalizadas.",
+    "Temos clareamento dental para uso em casa ou feito na clínica.",
+    "Sim, ambos os tipos com acompanhamento odontológico.",
+    # Prompt 6 (5 respostas)
+    "Sim, temos atendimento infantil com dentistas especializados.",
+    "Atendemos crianças com abordagem lúdica e segura.",
+    "Contamos com odontopediatras experientes no cuidado infantil.",
+    "Realizamos atendimentos infantis em ambiente acolhedor.",
+    "Sim, com foco no conforto da criança e orientação aos pais.",
+    # Prompt 7 (5 respostas)
+    "Aceitamos Amil, OdontoPrev, Bradesco Dental e SulAmérica Odonto.",
+    "Trabalhamos com Amil Dental, Bradesco, SulAmérica e OdontoPrev.",
+    "Sim. Confirme a cobertura com seu plano: Amil, Bradesco, OdontoPrev e SulAmérica.",
+    "Verifique com seu convênio. Atendemos Amil, OdontoPrev, Bradesco e SulAmérica.",
+    "Aceitamos principais planos: Amil, Bradesco, SulAmérica e OdontoPrev.",
+    # Prompt 8 (5 respostas)
+    "Parcelamos em até 12x no cartão de crédito.",
+    "Facilitamos o pagamento com parcelamento no cartão.",
+    "Até 12 parcelas dependendo do valor, no crédito.",
+    "Oferecemos opções de parcelamento via cartão.",
+    "Pagamentos podem ser divididos conforme o tratamento.",
+    # Prompt 9 (5 respostas)
+    "Aceitamos Pix, cartão de crédito, débito e dinheiro.",
+    "Trabalhamos com crédito, débito, dinheiro e Pix.",
+    "Pagamento por Pix, cartões ou em espécie.",
+    "Aceitamos as principais formas: crédito, débito, dinheiro, Pix.",
+    "Formas aceitas: Pix, dinheiro, cartão e parcelamento.",
+    # Prompt 10 (5 respostas)
+    "Evite fumar, alimentos quentes e esforço físico nas 24h após a extração.",
+    "Não fume e evite comidas quentes nas primeiras 24h.",
+    "Descanse e mantenha a boca limpa após o procedimento.",
+    "Siga as orientações e evite esforço físico nas 24h iniciais.",
+    "Alimentos quentes e cigarro devem ser evitados no primeiro dia.",
+    # Prompt 11 (5 respostas)
+    "Evite café, vinho tinto, molhos escuros e refrigerantes por 48h.",
+    "Não consuma alimentos escuros após o clareamento.",
+    "Evite comidas pigmentadas e bebidas escuras por dois dias.",
+    "Não fume e evite refrigerantes e café após clareamento.",
+    "Alimentos como beterraba, vinho e café devem ser evitados.",
+    # Prompt 12 (5 respostas)
+    "Dor leve é normal por até 72h. Se for intensa, entre em contato.",
+    "Sim, alguma dor pode ocorrer. Persistindo, fale com a clínica.",
+    "Sensibilidade é comum, mas dores fortes devem ser avaliadas.",
+    "É esperado um desconforto leve após o canal.",
+    "Se a dor for contínua, entre em contato com o dentista.",
+    # Prompt 13 (5 respostas)
+    "Rua das Flores, 123 – Centro, São Paulo/SP. Tel: (11) 1234-5678 / WhatsApp: (11) 91234-5678",
+    "Nosso endereço: Rua das Flores, 123 – SP. Tel: (11) 1234-5678",
+    "Endereço: Rua das Flores, 123. Fale conosco: (11) 91234-5678",
+    "Clínica na Rua das Flores, 123 – Centro, SP. Contato: (11) 1234-5678",
+    "Localização: Rua das Flores, 123. Telefones disponíveis no site.",
+    # Prompt 14 (5 respostas)
+    "Na primeira consulta, fazemos avaliação e elaboramos um plano de tratamento.",
+    "Realizamos exame clínico e explicamos o tratamento.",
+    "Avaliação inicial com check-up e plano de tratamento.",
+    "Consulta inicial inclui diagnóstico e orientação ao paciente.",
+    "Primeira consulta: avaliação + encaminhamento personalizado.",
+    # Prompt 15 (5 respostas)
+    "Temos estacionamento gratuito e acessibilidade para cadeirantes.",
+    "A clínica possui rampa, elevador e estacionamento.",
+    "Sim, estrutura acessível e espaço para estacionar.",
+    "Oferecemos estrutura para pacientes com mobilidade reduzida.",
+    "A clínica é adaptada com acessibilidade e estacionamento interno."
+]
+
+# Vamos criar um DataFrame onde cada linha é um prompt
+# e as 5 respostas ficam em colunas separadas.
+
+# Criar lista de dicionários para construir DataFrame
+dados = []
+for i, prompt in enumerate(prompts):
+    respostas_5 = respostas[i*5:(i+1)*5]
+    dados.append({
+        "Prompt": prompt,
+        "Resposta 1": respostas_5[0],
+        "Resposta 2": respostas_5[1],
+        "Resposta 3": respostas_5[2],
+        "Resposta 4": respostas_5[3],
+        "Resposta 5": respostas_5[4],
+    })
+
+df = pd.DataFrame(dados)
+
+# Exibir tabela organizada no Colab
+df
